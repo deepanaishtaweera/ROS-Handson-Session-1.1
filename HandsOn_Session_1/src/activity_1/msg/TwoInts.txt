@@ -1,0 +1,1 @@
+Create a msg file with two int16 integers 'a' and 'b'
