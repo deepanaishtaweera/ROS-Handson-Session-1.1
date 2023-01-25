@@ -1,12 +1,13 @@
-#!/usr/bin/env python  
+#!/usr/bin/env python
 import random
 
 import rospy
-from std_msgs.msg import Int16
+
 # START CODE HERE #
 # Import the created msg file
 
 # END CODE HERE #
+
 
 def talker():
     # START CODE HERE #
@@ -16,11 +17,11 @@ def talker():
     rospy.init_node('two_int_talker_node', anonymous=True)
 
     # START CODE HERE #
-    # Define r to publish a message once in every 2 seconds  
+    # Define r to publish a message once in every 2 seconds
     r = None
     # END CODE HERE #
 
-    rate = rospy.Rate(r)  
+    rate = rospy.Rate(r)
     random.seed()
 
     while not rospy.is_shutdown():
@@ -29,20 +30,16 @@ def talker():
         # Create a msg with the correct dtype
         msg = None
         # END CODE HERE #
-  
-        msg.a = None # Generate a random number between 1 and 20
-        msg.b = None # Generate a random number between 1 and 20
-        rospy.loginfo("{} and {} are published".format( msg.a,msg.b))
+
+        msg.a = None  # Generate a random number between 1 and 20
+        msg.b = None  # Generate a random number between 1 and 20
+        rospy.loginfo(f"{msg.a} and {msg.b} are published")
         pub.publish(msg)
         rate.sleep()
-    
+
 
 if __name__ == '__main__':
     try:
         talker()
     except rospy.ROSInterruptException:
         pass
-
-
-
-        
