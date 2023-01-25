@@ -4,20 +4,20 @@ import random
 import rospy
 
 # START CODE HERE #
-# Import the created msg file
+# TODO: Import the created msg file
 
 # END CODE HERE #
 
 
 def talker():
     # START CODE HERE #
-    # Create a publisher for the topic '/two_ints'
+    # TODO: Create a publisher for the topic '/two_ints'
     pub = None
     # END CODE HERE #
     rospy.init_node('two_int_talker_node', anonymous=True)
 
     # START CODE HERE #
-    # Define r to publish a message once in every 2 seconds
+    # TODO: Define r to publish a message once in every 2 seconds
     r = None
     # END CODE HERE #
 
@@ -27,12 +27,12 @@ def talker():
     while not rospy.is_shutdown():
 
         # START CODE HERE #
-        # Create a msg with the correct dtype
+        # TODO: Create a msg with the correct dtype
         msg = None
         # END CODE HERE #
 
-        msg.a = None  # Generate a random number between 1 and 20
-        msg.b = None  # Generate a random number between 1 and 20
+        msg.a = None  # TODO: Generate a random number between 1 and 20
+        msg.b = None  # TODO: Generate a random number between 1 and 20
         rospy.loginfo(f"{msg.a} and {msg.b} are published")
         pub.publish(msg)
         rate.sleep()
